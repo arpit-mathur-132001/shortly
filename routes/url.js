@@ -29,7 +29,7 @@ router.post("/shorten", ensureAuth, async (req, res) => {
       if (url) {
         res.redirect("/");
       } else {
-        const shortUrl = baseUrl + "/" + urlCode;
+        const shortUrl = baseUrl + urlCode;
 
         url = new Url({
           longUrl,
