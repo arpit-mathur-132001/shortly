@@ -41,7 +41,7 @@ router.post("/shorten", ensureAuth, async (req, res) => {
 
         await url.save();
 
-        res.redirect("/");
+        res.redirect("/dashboard");
       }
     } catch (err) {
       console.log(err);
