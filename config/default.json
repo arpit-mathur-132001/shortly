@@ -1,4 +1,6 @@
 {
-  "mongoURI": "mongodb+srv://arpit:arpit132001@cluster0.ybbthwr.mongodb.net/?retryWrites=true&w=majority",
-  "baseUrl": "https://crisp.cyclic.app/"
+  "mongoURI": "mongodb+srv://arpit:arpit132001@cluster0.ndcbgry.mongodb.net/?retryWrites=true&w=majority",
+  "baseUrl": "https://crisp.cyclic.app/in/",
+  "GOOGLE_CLIENT_ID": "296732502195-4s0tdi32qaurveh36rtnerhu2ptt6qq4.apps.googleusercontent.com",
+  "GOOGLE_CLIENT_SECRET": "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"
 }

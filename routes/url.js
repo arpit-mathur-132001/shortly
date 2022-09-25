@@ -3,14 +3,16 @@ const router = express.Router();
 const validUrl = require("valid-url");
 const shortid = require("shortid");
 const config = require("config");
+const { ensureAuth } = require("../middleware/auth");
 
 const Url = require("../models/url");
 
 // @route   POST /api/url/shorten
 // @desc    Create short URL
-router.post("/shorten", async (req, res) => {
+router.post("/shorten", ensureAuth, async (req, res) => {
   const longUrl = req.body.fullUrl;
   const baseUrl = config.get("baseUrl");
+  const user = req.user.id;
 
   // Check base url
   if (!validUrl.isUri(baseUrl)) {
@@ -33,6 +35,7 @@ router.post("/shorten", async (req, res) => {
           longUrl,
           shortUrl,
           urlCode,
+          user,
           date: new Date(),
         });
 
