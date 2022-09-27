@@ -3,6 +3,7 @@ const linkForm = document.getElementById("link-form");
 const errMsg = document.getElementById("err-msg");
 const btn = document.getElementById("menu-btn");
 const menu = document.getElementById("menu");
+const button = document.querySelector(".copy-btn");
 
 btn.addEventListener("click", navToggle);
 linkForm.addEventListener("submit", formSubmit);
@@ -40,3 +41,18 @@ function formSubmit(e) {
     input.classList.remove("border-red");
   }
 }
+
+// Copy Button
+const addToClipboard = async (link) => {
+  await navigator.clipboard.writeText(link);
+};
+
+const copyLink = async (link) => {
+  const copied = await addToClipboard(link);
+  button.innerText = "Copied";
+  setTimeout(() => {
+    button.innerText = "Copy link";
+  }, 3000);
+};
+
+button.addEventListener("click", () => copyLink("https://google.com"));
