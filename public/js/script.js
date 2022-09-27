@@ -3,7 +3,7 @@ const linkForm = document.getElementById("link-form");
 const errMsg = document.getElementById("err-msg");
 const btn = document.getElementById("menu-btn");
 const menu = document.getElementById("menu");
-const button = document.querySelector(".copy-btn");
+const button = document.querySelectorAll(".copy-btn");
 
 btn.addEventListener("click", navToggle);
 linkForm.addEventListener("submit", formSubmit);
