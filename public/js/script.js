@@ -47,14 +47,14 @@ const addToClipboard = async (link) => {
   await navigator.clipboard.writeText(link);
 };
 
-const copyLink = async (link) => {
-  const copied = await addToClipboard(link);
-  button.innerText = "Copied";
-  setTimeout(() => {
-    button.innerText = "Copy link";
-  }, 3000);
-};
-
 for (let i = 0; i < button.length; i++) {
+  const copyLink = async (link) => {
+    const copied = await addToClipboard(link);
+    button[i].innerText = "Copied";
+    setTimeout(() => {
+      button[i].innerText = "Copy link";
+    }, 3000);
+  };
+
   button[i].addEventListener("click", () => copyLink("https://google.com"));
 }
