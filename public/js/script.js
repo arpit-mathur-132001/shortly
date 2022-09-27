@@ -3,7 +3,7 @@ const linkForm = document.getElementById("link-form");
 const errMsg = document.getElementById("err-msg");
 const btn = document.getElementById("menu-btn");
 const menu = document.getElementById("menu");
-const button = document.querySelectorAll(".copy-btn");
+const button = document.getElementsByClassName(".copy-btn");
 
 btn.addEventListener("click", navToggle);
 linkForm.addEventListener("submit", formSubmit);
@@ -55,4 +55,6 @@ const copyLink = async (link) => {
   }, 3000);
 };
 
-button.addEventListener("click", () => copyLink("https://google.com"));
+for (let i = 0; i < button.length; i++) {
+  button[i].addEventListener("click", () => copyLink("https://google.com"));
+}
