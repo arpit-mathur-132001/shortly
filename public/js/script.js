@@ -4,6 +4,7 @@ const errMsg = document.getElementById("err-msg");
 const btn = document.getElementById("menu-btn");
 const menu = document.getElementById("menu");
 const button = document.getElementsByClassName("copy-btn");
+const shortUrl = document.getElementsByClassName("short-url");
 
 btn.addEventListener("click", navToggle);
 linkForm.addEventListener("submit", formSubmit);
@@ -52,9 +53,9 @@ for (let i = 0; i < button.length; i++) {
     const copied = await addToClipboard(link);
     button[i].innerText = "Copied";
     setTimeout(() => {
-      button[i].innerText = "Copy link";
+      button[i].innerText = "Copy";
     }, 3000);
   };
 
-  button[i].addEventListener("click", () => copyLink("https://google.com"));
+  button[i].addEventListener("click", () => copyLink(shortUrl[i].value));
 }
