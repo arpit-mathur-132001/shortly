@@ -56,6 +56,5 @@ for (let i = 0; i < button.length; i++) {
       button[i].innerText = "Copy";
     }, 3000);
   };
-
-  button[i].addEventListener("click", () => copyLink(shortUrl[i].value));
+  button[i].addEventListener("click", () => copyLink(shortUrl[i].innerText));
 }
